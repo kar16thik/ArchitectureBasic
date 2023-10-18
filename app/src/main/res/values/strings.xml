@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ArchitectureBasic</string>
+    <string name="title_activity_main_compose">MainComposeActivity</string>
+    <string name="hello">Hey , Their</string>
+    <string name="create_Account">Create an account</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+</resources>
