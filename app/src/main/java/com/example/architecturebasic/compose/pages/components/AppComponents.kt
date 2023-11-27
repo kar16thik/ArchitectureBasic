@@ -93,8 +93,8 @@ fun NormalTextFeild(lableValue:String){
 }
 
 @Composable
-fun ButtonComponent(value:String){
-   Button(onClick = { /*TODO*/ },
+fun ButtonComponent(value:String,onButtonClicked: () -> Unit){
+   Button(onClick = { onButtonClicked() },
    modifier = Modifier
        .fillMaxWidth()
        .heightIn(48.dp),
@@ -122,6 +122,8 @@ fun ButtonComponent(value:String){
 @Preview
 @Composable
 fun defaultPrviewOfSignup(){
-    ButtonComponent("value:String")
+    ButtonComponent("value:String"){
+
+    }
     NormalTextFeild("lableValue:String")
 }
