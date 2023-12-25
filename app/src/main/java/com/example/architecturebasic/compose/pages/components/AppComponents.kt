@@ -1,10 +1,18 @@
 package com.example.architecturebasic.compose.pages.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material3.Button
@@ -25,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.node.modifierElementOf
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -32,6 +41,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.architecturebasic.R
 import com.example.architecturebasic.compose.pages.screens.SignUpScreen
 import com.example.architecturebasic.compose.ui.theme.BorderColor
 import com.example.architecturebasic.compose.ui.theme.Pink80
@@ -118,12 +128,30 @@ fun ButtonComponent(value:String,onButtonClicked: () -> Unit){
    }
 }
 
+@Composable
+fun ItemListComponent(itemName1:String,itemName2:String){
+    Row(modifier = Modifier.fillMaxWidth().padding(5.dp).height(50.dp)) {
+        Image(painter = painterResource(id = R.drawable.dummy) ,
+            contentDescription ="",
+            modifier = Modifier .height(48.dp)
+                .width(48.dp)
+                .weight(1f))
+        Column(modifier = Modifier.weight(2f)) {
+            NormalTextComponent(itemName1)
+            NormalTextComponent(itemName2)
+        }
+        Image(painter = painterResource(id = R.drawable.arrow) ,
+            contentDescription ="",
+            modifier = Modifier .height(20.dp).width(20.dp)
+                .weight(1f).align(Alignment.CenterVertically))
+    }
+}
 
-@Preview
+
+
+
+        @Preview
 @Composable
 fun defaultPrviewOfSignup(){
-    ButtonComponent("value:String"){
-
-    }
-    NormalTextFeild("lableValue:String")
+            ItemListComponent("abc","abc")
 }
